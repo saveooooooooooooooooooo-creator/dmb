@@ -4,25 +4,7 @@ from discord import app_commands
 import re
 import asyncio
 import os
-from flask import Flask
-from threading import Thread
 from unidecode import unidecode
-
-# ================= KEEP ALIVE SERVER =================
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "Bot is alive!"
-
-def run():
-    app.run(host="0.0.0.0", port=8080)
-
-def keep_alive():
-    Thread(target=run).start()
-
-keep_alive()
 
 # ================= DISCORD BOT SETUP =================
 
@@ -158,3 +140,4 @@ async def unmute(interaction: discord.Interaction, user: discord.Member):
 # ================= RUN =================
 
 bot.run(TOKEN)
+
